@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>random nb genertor</title>
+</head>
+<body>
+  <div id="div1">
+    <div class="div2"><button class="btn" type="button" onclick="generateNb1()">Player1</button><label class="nb" id="lb1">0</label></div>
+    <br><br>
+    <div class="div2"><button class="btn" type="button" onclick="generateNb2()">Player2</button><label class="nb" id="lb2">0</label></div>
+    <br><br>
+    <div class="div2"><button class="btn" type="button" onclick="generateNb3()">player3</button><label class="nb" id="lb3">0</label></div>
+    <br><br>
+    <div class="div2"><button class="btn" type="button" onclick="generateNb4()">player4</button><label class="nb" id="lb4">0</label></div>
+
+  </div>
+  <button id="btnn" type="reset" onclick="reset()">Reset</button>
+
+
+
+  <style>
+    body {
+      background-color: #228B22;
+    }
+    #div1 {
+
+      margin-top: 10px;
+    }
+    .btn {
+      width: 200px;
+      height: 100px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f5f5f5;
+      margin: 10px 0;
+      font-size: 20px;
+    }
+    .btn:hover {
+      background-color: black;
+      color: white;
+    }
+    .nb{
+      float: right;
+      color: #f5f5f5;
+      font-size: 50px;
+      margin: 30px 0;
+    }
+    .div2 {
+      border-bottom: 2px solid black;
+      border-top:2px solid black ;
+    }
+    #btnn {
+      width: 75px;
+      margin-top: 10px;
+      height: 25px;
+    }
+
+  </style>
+  <script>
+    let lb1 = document.getElementById("lb1")
+    let lb2 = document.getElementById("lb2")
+    let lb3 = document.getElementById("lb3")
+    let lb4 = document.getElementById("lb4")
+
+    function generateNb1() {
+      let randomNb = Math.floor(Math.random()*13 ) + 1
+      lb1.innerText = randomNb
+    }
+    function generateNb2() {
+      let randomNb = Math.floor(Math.random()*13 ) + 1
+      lb2.innerText = randomNb
+    }
+    function generateNb3() {
+      let randomNb = Math.floor(Math.random()*13 ) + 1
+      lb3.innerText = randomNb
+    }
+    function generateNb4() {
+      let randomNb = Math.floor(Math.random()*13 ) + 1
+      lb4.innerText = randomNb
+    }
+    function reset() {
+      lb1.innerText = 0
+      lb2.innerText = 0
+      lb3.innerText = 0
+      lb4.innerText = 0
+    }
+
+  </script>
+</body>
+</html>

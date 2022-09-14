@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>people counter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div id="txt1" class="txt"><h1>People entered the shop:</h1></div>
+  <div id="txt2">0</div>
+  <button type="button" id="btn1" onclick="countpeople()" class="btn">Count</button>
+  <button type="button" id="btn2" class="btn" onclick="savenb()">Save</button>
+  <p id="txt3">people counted: </p>
+  <button id="btn3" type="reset" onclick="reset()" class="btn">Reset</button>
+  <style>
+    body{
+      background: url("menu-bg.jpg");
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .txt {
+      text-align: center;
+      margin-top: 60px;
+    }
+    .btn { font-size: 20px;
+      margin: 20px auto 0 auto ;
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      height: 70px;
+      width: 300px;
+      padding-top:25px;
+      border-radius: 9px;
+      background-color: grey;
+      border: none;
+    }
+    .btn:hover {
+      color: white;
+      background-color: black;
+      box-shadow: #2196f3;
+    }
+    #txt2 {
+      text-align: center;
+      font-size: 70px;
+    }
+    #txt3 {
+      text-align: center;
+      font-size: 25px;
+    }
+  </style>
+  <script>
+    let count = 0
+    let count1 = document.getElementById("txt2")
+    function countpeople() {
+      count += 1
+      count1.textContent = count
+    }
+    let save = document.getElementById("txt3")
+    function savenb() {
+      let save1 = count + " - "
+      save.textContent += save1
+      count = 0
+      count1.innerText = 0
+    }
+    function reset() {
+      save.innerText = "people counted:"
+      count = 0
+      count1.innerText = 0
+    }
+  </script>
+</body>
+</html>

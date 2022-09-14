@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+
+</head>
+<body>
+<p>Calculator</p>
+<div class="container">
+  <div class="calc">
+    <input type="text"  placeholder="0" id="input" disabled>
+    <button onclick="clr()">C</button>
+    <button onclick="del()">Del</button>
+    <button onclick="calculate('%')">%</button>
+    <button onclick="calculate('/')">/</button>
+    <button onclick="calculate(7)">7</button>
+    <button onclick="calculate(8)">8</button>
+    <button onclick="calculate(9)">9</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate(4)">4</button>
+    <button onclick="calculate(5)">5</button>
+    <button onclick="calculate(6)">6</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate(1)">1</button>
+    <button onclick="calculate(2)">2</button>
+    <button onclick="calculate(3)">3</button>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('.')">.</button>
+    <button onclick="calculate(0)">0</button>
+    <button class="eq" onclick="result()">=</button>
+  </div>
+</div>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
+    background-color: #ecf0f3;
+  }
+  .container {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ecf0f3;
+  }
+  .calc {
+    box-shadow: 01px 01px 30px 0px black;
+    border-radius: 28px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+  }
+  input {
+    grid-column: span 4;
+    height: 80px;
+    width: 400px;
+    box-shadow: inset -6px -6px 13px #fff, inset 6px 6px 13px rgba(0,0,0,0.16);
+    background-color: #ecf0f3;
+    border: none;
+    border-radius: 32px;
+    color: rgb(26,25,25);
+    text-align: end;
+    margin: 40px 0 30px 0;
+    padding: 20px;
+    font-size: 40px;
+  }
+  button {
+    box-shadow:  inset 6px 6px 13px #fff, 1px 6px 13px grey;
+    background-color: #ecf0f3;
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    margin: 10px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .eq {
+    width: 180px;
+    border-radius: 42px;
+    box-shadow:  inset 6px 6px 13px #fff,  1px 6px 13px grey;
+    background-color: #ecf0f3;
+  }
+  button:active {
+    background-color: black;
+    color: whitesmoke;
+    box-shadow: none;
+  }
+  p {
+    font-size: 50px;
+    text-align: center;
+    font-weight: lighter;
+    border-bottom: 3px dashed black;
+  }
+</style>
+<script>
+  let txt = document.getElementById("input")
+  function calculate (num) {
+    txt.value += num
+  }
+  function result() {
+    try {
+      txt.value = eval(txt.value)
+    }
+    catch (err) {
+      alert("please enter a valid format")
+    }
+  }
+  function clr() {
+    txt.value = ""
+  }
+  function del(){
+    txt.value = txt.value.slice(0,-1)
+  }
+</script>
+</body>
+</html>
