@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @Alii10
 - 👀 I’m interested in coding, especially web dev
-- 🌱 I’m learned front-end dev, soon getting into back-end
+- 🌱 I learned front-end dev, soon getting into back-end
 - 💞️ I’m looking to collaborate with teams and companies
 - 📫 How to reach me: ihelo983@gmail.com
 
